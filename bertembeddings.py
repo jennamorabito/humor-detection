@@ -9,7 +9,7 @@ nltk.download('punkt')
 # import random
 from transformers import BertTokenizer, TFBertModel
 # from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-from sklearn.metrics import f1_score
+# from sklearn.metrics import f1_score
 # from sklearn.model_selection import train_test_split
 from tqdm import tqdm # for nice progress meters
 
@@ -99,6 +99,25 @@ def compute_input_arrays(df, columns, tokenizer):
 
     print(model_input[0].shape)
     return model_input
+
+# read in data
+data = pd.read_csv('clean_dataset.csv')
+
+# split into train and test data
+x_train, x_test = data['text'][:160000], data['text'][160000:]
+y_train, y_test = data['humor'][:160000].values, data['humor'][160000:].values
+
+# cast back into dataframes
+x_train, x_test = x_train.to_frame('text'), x_test.to_frame('text')
+#y_train, y_test = y_train.to_frame('humor'), y_test.to_frame('humor')
+
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+inputs      = compute_input_arrays(x_train[:20000], ['text'], tokenizer)
+test_inputs = compute_input_arrays(x_test[:20000], ['text'], tokenizer)
+
+save('inputs-20k.npy', inputs)
+save('test-inputs-20k.npy', inputs)
 
 # inputs      = compute_input_arrays(x_train, ['text'], tokenizer)
 # test_inputs = compute_input_arrays(x_test, ['text'], tokenizer)
