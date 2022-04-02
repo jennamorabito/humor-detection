@@ -111,11 +111,11 @@ x_train, x_test = x_train.to_frame('text'), x_test.to_frame('text')
 
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-inputs      = compute_input_arrays_simple(x_train, ['text'], tokenizer)
-test_inputs = compute_input_arrays_simple(x_test, ['text'], tokenizer)
+inputs      = compute_input_arrays_simple(x_train[60000:160000], ['text'], tokenizer)
+# test_inputs = compute_input_arrays_simple(x_test[], ['text'], tokenizer)
 
-save('inputs-simple.npy', inputs)
-save('test-inputs-simple.npy', inputs)
+save('inputs-simple-100k.npy', inputs)
+# save('test-inputs-simple.npy', inputs)
 
 # inputs      = compute_input_arrays(x_train, ['text'], tokenizer)
 # test_inputs = compute_input_arrays(x_test, ['text'], tokenizer)
