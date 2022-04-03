@@ -6,7 +6,7 @@ A natural language processing project using BERT to detect humor, loosely replic
 `clean_dataset.csv` - same dataset as above, after processing: expand contractions, pad punctuation with spaces, and handle special characters
 
 ### Files for tokenizing:
-`bert-embeddings.py` - functions to tokenize the data, relatively faithful to authors' functions (split documents into 5 sentences and tokenize each + tokenize entire document)
+`bert-embeddings.py` - everything we need to tokenize the data, relatively faithful to authors' functions (split documents into 5 sentences and tokenize each + tokenize entire document) and save the embeddings as npz files
 `bertembeddings-full.py` - functions to tokenize the documents split into 5 sentences but not tokenizing the entire document
 `bertembeddings-simple.py` - tokenize the whole document but not individual MAX_SENTENCES
 
