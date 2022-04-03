@@ -86,12 +86,12 @@ def compute_input_arrays(df, columns, tokenizer):
 
         # full row
         # outputs from encoder for whole sentence, put into next three empty lists following the encodings for each sentence
-        ids_q, masks_q, segments_q = return_id(row.text, 'longest_first', MAX_LENGTH)
-        model_input[i].append(ids_q)
+        #ids_q, masks_q, segments_q = return_id(row.text, 'longest_first', MAX_LENGTH)
+        #model_input[i].append(ids_q)
         i+=1
-        model_input[i].append(masks_q)
+        #model_input[i].append(masks_q)
         i+=1
-        model_input[i].append(segments_q)
+        #model_input[i].append(segments_q)
 
     # cast each list as an np array, now we have a list of arrays
     for xx in range((MAX_SENTENCES*3)+3):
@@ -113,11 +113,11 @@ x_train, x_test = x_train.to_frame('text'), x_test.to_frame('text')
 
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-inputs      = compute_input_arrays(x_train, ['text'], tokenizer)
-test_inputs = compute_input_arrays(x_test, ['text'], tokenizer)
+inputs      = compute_input_arrays(x_train[:15000], ['text'], tokenizer)
+test_inputs = compute_input_arrays(x_test[:5000], ['text'], tokenizer)
 
-save('inputs-full.npy', inputs)
-save('test-inputs-full.npy', inputs)
+np.save('inputs-sentences-15k.npy', inputs)
+np.save('test-inputs-sentences-5k.npy', test_inputs)
 
 # inputs      = compute_input_arrays(x_train, ['text'], tokenizer)
 # test_inputs = compute_input_arrays(x_test, ['text'], tokenizer)
