@@ -1,17 +1,19 @@
 # https://towardsdatascience.com/implementing-custom-data-generators-in-keras-de56f013581c
+from transformers import BertTokenizer
+from bertembeddings import compute_input_arrays
 
 class DataGenerator(tf.keras.utils.Sequence):
-    def __init__(self, df, x_col, y_col=None, batch_size=1000, num_classes=None, shuffle=True):
+    def __init__(self, df, x_col, y_col=None, batch_size=1000, num_classes=1, shuffle=True):
         # Define the constructor to initialize the configuration of the generator
         # We assume the path to the data is in a dataframe column,
         # thoughThis could also be a directory name from where you load the data
         self.batch_size = batch_size
         self.df = df
         self.indices = self.df.index.tolist()
-        self.num_classes = 2
+        self.num_classes = num_classes
         self.shuffle = shuffle
-        self.x_col = x_col
-        self.y_col = y_col
+        self.x_col = x_col # name of column containing data (list of str)
+        self.y_col = y_col # name of column containing labels (str)
         self.on_epoch_end()
 
     def __len__(self):
@@ -21,7 +23,7 @@ class DataGenerator(tf.keras.utils.Sequence):
     def __getitem__(self, index):
         # Generate one batch of data
         # Generate indices of the batch
-        index = self.index[index * self.batch_size:(index + 1) * self.batch_size]
+        index = self.index[index * self.batch_size:(index + 1) * self.batch_size] # batched shuffled indices
         # Find list of IDs
         batch = [self.indices[k] for k in index]
 
@@ -38,12 +40,8 @@ class DataGenerator(tf.keras.utils.Sequence):
     def __get_data(self, batch):
         # X.shape : (batch_size, *dim)
         # We can have multiple Xs and can return them as a list
-        X = np.empty((self.batch_size, *self.dim)) # logic to load the data from storage
-        y = np.empty((self.batch_size, *self.dim)) # logic for the target variables
         # Generate data
-        for i, id in enumerate(batch):
-        # Store sample
-            X[i,] =  df[x_col][i] # logic
-        # Store class
-            y[i] = df[y_col][i] # labels
+        tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        X = compute_input_arrays(self.df.loc[batch, x_col], x_col, tokenizer)
+        y = self.df.loc[batch, 'humor']
         return X, y
