@@ -29,6 +29,11 @@ class DataGenerator(tf.keras.utils.Sequence):
 
         # Generate data
         X, y = self.__get_data(batch)
+        # save processed data to npz file
+        X_dict = dict(zip(map(str, range(len(X))), X))
+        X_dict['y'] = y
+        np.savez_compressed("batch_{}_inputs_{}.npz".format(batch[0], self.batch_size), **X_dict)
+        
         return X, y
 
     def on_epoch_end(self):
