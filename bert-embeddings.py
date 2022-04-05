@@ -1,16 +1,10 @@
 import io
 import pandas as pd
-import torch
+# import torch
 import numpy as np
 import nltk
 nltk.download('punkt')
-# import re
-# import os
-# import random
 from transformers import BertTokenizer, BertModel, BertForSequenceClassification
-from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-from sklearn.metrics import f1_score
-from sklearn.model_selection import train_test_split
 from tqdm import tqdm # for nice progress meters
 
 # read data in as a dataframe

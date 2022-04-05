@@ -9,6 +9,7 @@ import nltk
 import transformers
 from transformers import BertTokenizer, TFBertModel
 from tqdm import tqdm # for nice progress meters
+nltk.download('punkt')
 
 # the presets in the author's code
 MAX_SENTENCES = 5
