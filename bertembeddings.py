@@ -31,6 +31,7 @@ def return_id(str1, truncation_strategy, length):
     inputs = tokenizer.encode_plus(str1,
         add_special_tokens=True,
         max_length=length,
+        truncation = True,
         truncation_strategy='longest_first',
         pad_to_max_length = True)
 
