@@ -1,0 +1,112 @@
+# baseline
+Epoch 1/5
+ETA: 0s - loss: 0.1296 - accuracy: 0.9569
+269s 151ms/step - loss: 0.1296 - accuracy: 0.9569 - val_loss: 0.0884 - val_accuracy: 0.9643
+Epoch 2/5
+ETA: 0s - loss: 0.0632 - accuracy: 0.9798
+248s 149ms/step - loss: 0.0632 - accuracy: 0.9798 - val_loss: 0.0922 - val_accuracy: 0.9717
+Epoch 3/5
+196s 118ms/step - loss: 0.0390 - accuracy: 0.9885 - val_loss: 0.1366 - val_accuracy: 0.9633
+Epoch 4/5
+196s 117ms/step - loss: 0.0402 - accuracy: 0.9891 - val_loss: 0.1810 - val_accuracy: 0.9510
+Epoch 5/5
+196s 117ms/step - loss: 0.0266 - accuracy: 0.9930 - val_loss: 0.2394 - val_accuracy: 0.9563
+
+# colbert_doc
+Epoch 1/5
+ETA: 0s - loss: 0.2020 - accuracy: 0.9200
+265s 149ms/step - loss: 0.2020 - accuracy: 0.9200 - val_loss: 0.1263 - val_accuracy: 0.9587
+Epoch 2/5
+ETA: 0s - loss: 0.0589 - accuracy: 0.9829
+250s 150ms/step - loss: 0.0589 - accuracy: 0.9829 - val_loss: 0.1216 - val_accuracy: 0.9633
+Epoch 3/5
+ETA: 0s - loss: 0.0341 - accuracy: 0.9909
+252s 151ms/step - loss: 0.0341 - accuracy: 0.9909 - val_loss: 0.1238 - val_accuracy: 0.9723
+Epoch 4/5
+ETA: 0s - loss: 0.0164 - accuracy: 0.9950
+Epoch 5/5
+ETA: 0s - loss: 0.0104 - accuracy: 0.9968
+250s 150ms/step - loss: 0.0104 - accuracy: 0.9968 - val_loss: 0.1423 - val_accuracy: 0.9737
+
+# baseline_sent
+Epoch 1/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.2020 - accuracy: 0.9200
+1667/1667 [==============================] - 265s 149ms/step - loss: 0.2020 - accuracy: 0.9200 - val_loss: 0.1263 - val_accuracy: 0.9587
+Epoch 2/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0589 - accuracy: 0.9829WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 250s 150ms/step - loss: 0.0589 - accuracy: 0.9829 - val_loss: 0.1216 - val_accuracy: 0.9633
+Epoch 3/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0341 - accuracy: 0.9909WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 252s 151ms/step - loss: 0.0341 - accuracy: 0.9909 - val_loss: 0.1238 - val_accuracy: 0.9723
+Epoch 4/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0164 - accuracy: 0.9950WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 253s 152ms/step - loss: 0.0164 - accuracy: 0.9950 - val_loss: 0.1185 - val_accuracy: 0.9733
+Epoch 5/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0104 - accuracy: 0.9968WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 250s 150ms/step - loss: 0.0104 - accuracy: 0.9968 - val_loss: 0.1423 - val_accuracy: 0.9737
+
+# colbert_sent
+Epoch 1/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.3479 - accuracy: 0.8388WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 482s 243ms/step - loss: 0.3479 - accuracy: 0.8388 - val_loss: 0.1579 - val_accuracy: 0.9477
+Epoch 2/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.1147 - accuracy: 0.9661WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 398s 239ms/step - loss: 0.1147 - accuracy: 0.9661 - val_loss: 0.1433 - val_accuracy: 0.9550
+Epoch 3/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0671 - accuracy: 0.9826WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 400s 240ms/step - loss: 0.0671 - accuracy: 0.9826 - val_loss: 0.1328 - val_accuracy: 0.9617
+Epoch 4/5
+1667/1667 [==============================] - 312s 187ms/step - loss: 0.0407 - accuracy: 0.9901 - val_loss: 0.1888 - val_accuracy: 0.9583
+Epoch 5/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0310 - accuracy: 0.9913WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 396s 238ms/step - loss: 0.0310 - accuracy: 0.9913 - val_loss: 0.1777 - val_accuracy: 0.9630
+
+# colbert_2sent
+Epoch 1/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.3479 - accuracy: 0.8388WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 482s 243ms/step - loss: 0.3479 - accuracy: 0.8388 - val_loss: 0.1579 - val_accuracy: 0.9477
+Epoch 2/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.1147 - accuracy: 0.9661WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 398s 239ms/step - loss: 0.1147 - accuracy: 0.9661 - val_loss: 0.1433 - val_accuracy: 0.9550
+Epoch 3/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0671 - accuracy: 0.9826WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 400s 240ms/step - loss: 0.0671 - accuracy: 0.9826 - val_loss: 0.1328 - val_accuracy: 0.9617
+Epoch 4/5
+1667/1667 [==============================] - 312s 187ms/step - loss: 0.0407 - accuracy: 0.9901 - val_loss: 0.1888 - val_accuracy: 0.9583
+Epoch 5/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0310 - accuracy: 0.9913WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 396s 238ms/step - loss: 0.0310 - accuracy: 0.9913 - val_loss: 0.1777 - val_accuracy: 0.9630
+
+# colbert_simple
+Epoch 1/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.3479 - accuracy: 0.8388WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 482s 243ms/step - loss: 0.3479 - accuracy: 0.8388 - val_loss: 0.1579 - val_accuracy: 0.9477
+Epoch 2/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.1147 - accuracy: 0.9661WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 398s 239ms/step - loss: 0.1147 - accuracy: 0.9661 - val_loss: 0.1433 - val_accuracy: 0.9550
+Epoch 3/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0671 - accuracy: 0.9826WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 400s 240ms/step - loss: 0.0671 - accuracy: 0.9826 - val_loss: 0.1328 - val_accuracy: 0.9617
+Epoch 4/5
+1667/1667 [==============================] - 312s 187ms/step - loss: 0.0407 - accuracy: 0.9901 - val_loss: 0.1888 - val_accuracy: 0.9583
+Epoch 5/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0310 - accuracy: 0.9913WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 396s 238ms/step - loss: 0.0310 - accuracy: 0.9913 - val_loss: 0.1777 - val_accuracy: 0.9630
+
+
+
+# colbert_full_model
+Epoch 1/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.2051 - accuracy: 0.9249WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 798s 408ms/step - loss: 0.2051 - accuracy: 0.9249 - val_loss: 0.0823 - val_accuracy: 0.9687
+Epoch 2/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0588 - accuracy: 0.9814WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 668s 401ms/step - loss: 0.0588 - accuracy: 0.9814 - val_loss: 0.0887 - val_accuracy: 0.9723
+Epoch 3/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0290 - accuracy: 0.9913WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 668s 401ms/step - loss: 0.0290 - accuracy: 0.9913 - val_loss: 0.0949 - val_accuracy: 0.9787
+Epoch 4/5
+1667/1667 [==============================] - 527s 316ms/step - loss: 0.0158 - accuracy: 0.9951 - val_loss: 0.1223 - val_accuracy: 0.9760
+Epoch 5/5
+1667/1667 [==============================] - ETA: 0s - loss: 0.0033 - accuracy: 0.9988WARNING:absl:Found untraced functions such as embeddings_layer_call_fn, embeddings_layer_call_and_return_conditional_losses, encoder_layer_call_fn, encoder_layer_call_and_return_conditional_losses, pooler_layer_call_fn while saving (showing 5 of 426). These functions will not be directly callable after loading.
+1667/1667 [==============================] - 671s 403ms/step - loss: 0.0033 - accuracy: 0.9988 - val_loss: 0.1371 - val_accuracy: 0.9797
