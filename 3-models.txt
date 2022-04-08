@@ -1,3 +1,40 @@
+CONCISE SUMMARY: (full summaries down below)
+baseline
+3 input layers   w/         0 params
+1 BERT model     w/ 109482240 params
+1 output layer   w/       769 params
+                  109,483,009 total params
+
+bert_2sent
+6 input layers   w/         0 params
+1 BERT model     w/ 109482240 params
+2 dense layers   w/     24608 params each
+2 dropout layers w/         0 params each
+2 dense layers   w/       264 params each
+1 concatonation
+1 dense layer    w/      8704 params
+1 dropout layer  w/         0 params
+1 dense layer    w/    131328 params
+1 output layer   w/       257 params
+                  109,672,273 total params
+
+colbert_full
+18 input layers  w/         0 params
+1 BERT model     w/ 109482240 params
+5 dense layers   w/     24608 params each
+1 dense layer    w/    196864 params
+6 dropout layers w/         0 params each
+5 dense layers   w/       264 params each
+1 dense layer    w/     16448 params
+1 concatonation
+1 dense layer    w/      53760 params
+1 dropout layer  w/         0 params
+1 dense layer    w/    131328 params
+1 output layer   w/       257 params
+                  110,005,257 params
+
+
+
 Model: "baseline"
 __________________________________________________________________________________________________
  Layer (type)                   Output Shape         Param #     Connected to
@@ -19,6 +56,8 @@ Total params: 109,483,009
 Trainable params: 109,483,009
 Non-trainable params: 0
 __________________________________________________________________________________________________
+
+
 
 
 Model: "colbert_2sent"
@@ -72,6 +111,8 @@ Total params: 109,672,273
 Trainable params: 109,672,273
 Non-trainable params: 0
 __________________________________________________________________________________________________
+
+
 
 
 Model: "keras_func_model"
