@@ -1,0 +1,191 @@
+Model: "baseline"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ input_ids (InputLayer)         [(None, 100)]        0           []
+
+ attention_masks (InputLayer)   [(None, 100)]        0           []
+
+ token_type_ids (InputLayer)    [(None, 100)]        0           []
+
+ tf_bert_model (TFBertModel)    ((None, 100, 768),   109482240   ['input_ids[0][0]',
+                                 (None, 768))                     'attention_masks[0][0]',
+                                                                  'token_type_ids[0][0]']
+
+ output (Dense)                 (None, 1)            769         ['tf_bert_model[0][1]']
+
+==================================================================================================
+Total params: 109,483,009
+Trainable params: 109,483,009
+Non-trainable params: 0
+__________________________________________________________________________________________________
+
+
+Model: "colbert_2sent"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ input_ii_sent1 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent1 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent1 (InputLayer)   [(None, 20)]         0           []
+
+ input_ii_sent2 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent2 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent2 (InputLayer)   [(None, 20)]         0           []
+
+ tf_bert_model_1 (TFBertModel)  ((None, 20, 768),    109482240   ['input_ii_sent1[0][0]',
+                                 (None, 768))                     'input_am_sent1[0][0]',
+                                                                  'input_tti_sent1[0][0]',
+                                                                  'input_ii_sent2[0][0]',
+                                                                  'input_am_sent2[0][0]',
+                                                                  'input_tti_sent2[0][0]']
+
+ hidden1_sent1 (Dense)          (None, 32)           24608       ['tf_bert_model_1[0][1]']
+
+ hidden1_sent2 (Dense)          (None, 32)           24608       ['tf_bert_model_1[1][1]']
+
+ h1_dropout_sent1 (Dropout)     (None, 32)           0           ['hidden1_sent1[0][0]']
+
+ h1_dropout_sent2 (Dropout)     (None, 32)           0           ['hidden1_sent2[0][0]']
+
+ hidden2_sent1 (Dense)          (None, 8)            264         ['h1_dropout_sent1[0][0]']
+
+ hidden2_sent2 (Dense)          (None, 8)            264         ['h1_dropout_sent2[0][0]']
+
+ concatenate (Concatenate)      (None, 16)           0           ['hidden2_sent1[0][0]',
+                                                                  'hidden2_sent2[0][0]']
+
+ hidden3 (Dense)                (None, 512)          8704        ['concatenate[0][0]']
+
+ dropout_74 (Dropout)           (None, 512)          0           ['hidden3[0][0]']
+
+ hidden4 (Dense)                (None, 256)          131328      ['dropout_74[0][0]']
+
+ output (Dense)                 (None, 1)            257         ['hidden4[0][0]']
+
+==================================================================================================
+Total params: 109,672,273
+Trainable params: 109,672,273
+Non-trainable params: 0
+__________________________________________________________________________________________________
+
+
+Model: "keras_func_model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ input_ii_sent1 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent1 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent1 (InputLayer)   [(None, 20)]         0           []
+
+ input_ii_sent2 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent2 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent2 (InputLayer)   [(None, 20)]         0           []
+
+ input_ii_sent3 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent3 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent3 (InputLayer)   [(None, 20)]         0           []
+
+ input_ii_sent4 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent4 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent4 (InputLayer)   [(None, 20)]         0           []
+
+ input_ii_sent5 (InputLayer)    [(None, 20)]         0           []
+
+ input_am_sent5 (InputLayer)    [(None, 20)]         0           []
+
+ input_tti_sent5 (InputLayer)   [(None, 20)]         0           []
+
+ input_ii_doc (InputLayer)      [(None, 100)]        0           []
+
+ input_am_doc (InputLayer)      [(None, 100)]        0           []
+
+ input_tti_doc (InputLayer)     [(None, 100)]        0           []
+
+ tf_bert_model (TFBertModel)    multiple             109482240   ['input_ii_sent1[0][0]',
+                                                                  'input_am_sent1[0][0]',
+                                                                  'input_tti_sent1[0][0]',
+                                                                  'input_ii_sent2[0][0]',
+                                                                  'input_am_sent2[0][0]',
+                                                                  'input_tti_sent2[0][0]',
+                                                                  'input_ii_sent3[0][0]',
+                                                                  'input_am_sent3[0][0]',
+                                                                  'input_tti_sent3[0][0]',
+                                                                  'input_ii_sent4[0][0]',
+                                                                  'input_am_sent4[0][0]',
+                                                                  'input_tti_sent4[0][0]',
+                                                                  'input_ii_sent5[0][0]',
+                                                                  'input_am_sent5[0][0]',
+                                                                  'input_tti_sent5[0][0]',
+                                                                  'input_ii_doc[0][0]',
+                                                                  'input_am_doc[0][0]',
+                                                                  'input_tti_doc[0][0]']
+
+ hidden1_sent1 (Dense)          (None, 32)           24608       ['tf_bert_model[0][1]']
+
+ hidden1_sent2 (Dense)          (None, 32)           24608       ['tf_bert_model[1][1]']
+
+ hidden1_sent3 (Dense)          (None, 32)           24608       ['tf_bert_model[2][1]']
+
+ hidden1_sent4 (Dense)          (None, 32)           24608       ['tf_bert_model[3][1]']
+
+ hidden1_sent5 (Dense)          (None, 32)           24608       ['tf_bert_model[4][1]']
+
+ hidden1_doc (Dense)            (None, 256)          196864      ['tf_bert_model[5][1]']
+
+ h1_dropout_sent1 (Dropout)     (None, 32)           0           ['hidden1_sent1[0][0]']
+
+ h1_dropout_sent2 (Dropout)     (None, 32)           0           ['hidden1_sent2[0][0]']
+
+ h1_dropout_sent3 (Dropout)     (None, 32)           0           ['hidden1_sent3[0][0]']
+
+ h1_dropout_sent4 (Dropout)     (None, 32)           0           ['hidden1_sent4[0][0]']
+
+ h1_dropout_sent5 (Dropout)     (None, 32)           0           ['hidden1_sent5[0][0]']
+
+ h1_dropout_doc (Dropout)       (None, 256)          0           ['hidden1_doc[0][0]']
+
+ hidden2_sent1 (Dense)          (None, 8)            264         ['h1_dropout_sent1[0][0]']
+
+ hidden2_sent2 (Dense)          (None, 8)            264         ['h1_dropout_sent2[0][0]']
+
+ hidden2_sent3 (Dense)          (None, 8)            264         ['h1_dropout_sent3[0][0]']
+
+ hidden2_sent4 (Dense)          (None, 8)            264         ['h1_dropout_sent4[0][0]']
+
+ hidden2_sent5 (Dense)          (None, 8)            264         ['h1_dropout_sent5[0][0]']
+
+ hidden2_doc (Dense)            (None, 64)           16448       ['h1_dropout_doc[0][0]']
+
+ concatenate (Concatenate)      (None, 104)          0           ['hidden2_sent1[0][0]',
+                                                                  'hidden2_sent2[0][0]',
+                                                                  'hidden2_sent3[0][0]',
+                                                                  'hidden2_sent4[0][0]',
+                                                                  'hidden2_sent5[0][0]',
+                                                                  'hidden2_doc[0][0]']
+
+ hidden3 (Dense)                (None, 512)          53760       ['concatenate[0][0]']
+
+ dropout_37 (Dropout)           (None, 512)          0           ['hidden3[0][0]']
+
+ hidden4 (Dense)                (None, 256)          131328      ['dropout_37[0][0]']
+
+ output (Dense)                 (None, 1)            257         ['hidden4[0][0]']
+
+==================================================================================================
+Total params: 110,005,257
+Trainable params: 110,005,257
+Non-trainable params: 0
+__________________________________________________________________________________________________
