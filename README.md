@@ -10,9 +10,9 @@ Professors will want to check out `models.ipynb` in the Code folder
 ├── .DS_Store \
 ├── Final Report.pdf \
 ├── Analysis \
-    ├── Graphs \
-        ├── f1-diff-comparison.png \
-        ├── runtime-vs-f1.png \
+    ├── Graphs \
+        ├── f1-diff-comparison.png \
+        ├── runtime-vs-f1.png \
         ├── training-accuracy.png \
         ├── training-loss.png \
         ├── validation-accuracy.png \
@@ -42,7 +42,7 @@ Professors will want to check out `models.ipynb` in the Code folder
     ├── dataset.csv \
     ├── test_inputs_1k.npz \
     ├── train_inputs_10k.npz \
-    ├── val_inputs_3k.npz \
+    ├── val_inputs_3k.npz
 
 ## About our files
 
