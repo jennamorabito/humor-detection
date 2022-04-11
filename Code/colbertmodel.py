@@ -7,14 +7,12 @@ from tqdm.notebook import tqdm
 
 # import tensorflow_hub as hub
 import tensorflow as tf
-# import bert_tokenization as tokenization
 import tensorflow.keras.backend as K
-from tensorflow import keras 
+from tensorflow import keras
 
 import os
 from scipy.stats import spearmanr
 from math import floor, ceil
-# from transformers import *
 from transformers import TFBertModel, BertTokenizer
 
 import seaborn as sns
@@ -64,12 +62,12 @@ bert_embeddings5 = bert_model(input_ids=input_sent5_1, attention_mask=input_sent
 bert_embeddings6 = bert_model(input_ids=input_sent6_1, attention_mask=input_sent6_2, token_type_ids=input_sent6_3)
 
 # get pooled vectors of BERT sentence embeddings
-x1 = bert_embeddings1[1] 
-x2 = bert_embeddings2[1] 
+x1 = bert_embeddings1[1]
+x2 = bert_embeddings2[1]
 x3 = bert_embeddings3[1]
 x4 = bert_embeddings4[1]
 x5 = bert_embeddings5[1]
-x6 = bert_embeddings6[1] 
+x6 = bert_embeddings6[1]
 
 # fully connected layer w/ dropout
 h1_1 = Dense(32, activation='relu', name="hidden1_sent1")(x1)
@@ -81,7 +79,7 @@ h1_6 = Dense(256, activation='relu', name="hidden1_doc")(x6)
 
 h1_dropout1 = Dropout(DROPOUT_RATE, name="h1_dropout_sent1")(h1_1) ####################################################
 h1_dropout2 = Dropout(DROPOUT_RATE, name="h1_dropout_sent2")(h1_2) ####################################################
-h1_dropout3 = Dropout(DROPOUT_RATE, name="h1_dropout_sent3")(h1_3) #                rate TO BE CHANGED                # 
+h1_dropout3 = Dropout(DROPOUT_RATE, name="h1_dropout_sent3")(h1_3) #                rate TO BE CHANGED                #
 h1_dropout4 = Dropout(DROPOUT_RATE, name="h1_dropout_sent4")(h1_4) #                                                  #
 h1_dropout5 = Dropout(DROPOUT_RATE, name="h1_dropout_sent5")(h1_5) ####################################################
 h1_dropout6 = Dropout(DROPOUT_RATE, name="h1_dropout_doc")(h1_6)   ####################################################

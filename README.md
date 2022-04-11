@@ -1,25 +1,62 @@
-# **DOES NOT YET REFLECT DIRECTORY STRUCTURE**
-
-# humor-detection
+# The ColBERT Report
 A natural language processing project using BERT to detect humor, testing the efficacy of this work: https://github.com/Moradnejad/ColBERT-Using-BERT-Sentence-Embedding-for-Humor-Detection
+
+## Repository structure
+Professors will want to check out `models.ipynb` in the Code folder
+
+.
+├── README.md
+├── .gitignore
+├── .DS_Store
+├── Final Report.pdf
+├── Analysis
+    ├── Graphs
+        ├── f1-diff-comparison.png
+        ├── runtime-vs-f1.png
+        ├── training-accuracy.png
+        ├── training-loss.png
+        ├── validation-accuracy.png
+        ├── validation-loss.png
+    ├── Qualitative
+        ├── baseline_misclassified.csv
+        ├── colbert_10k_misclassified.csv
+        ├── colbert_simple_misclassified.csv
+        ├── confusion-matrices.md
+    ├── Quantitative
+        ├── model-results-prettynames.csv
+        ├── model-results.csv
+        ├── train-val-accuracy-loss-all.txt
+        ├── train-val-accuracy-loss-subset-numnames.txt
+        ├── train-val-accuracy-loss-subset.txt
+    ├── .DS_Store
+    ├── 3-models-summary.txt
+    ├── all-models-summary-cheatsheet.png
+├── Code
+    ├── bertembeddings.py
+    ├── class-DataGenerator.py
+    ├── colbertmodel.py
+    ├── models.ipynb
+    ├── replicate_colbert.ipynb
+├── Data
+    ├── clean_dataset.csv
+    ├── dataset.csv
+    ├── test_inputs_1k.npz
+    ├── train_inputs_10k.npz
+    ├── val_inputs_3k.npz
+
+## About our files
+
+### Analysis data files:
+/Qualitative is a look at what statements a couple different models misclassified, and /Quantitative has runtimes, F1 scores, etc across models. /Graphs contains a few visualizations about these things.
+
+### Code:
+- `bertembeddings.py` - everything we need to tokenize the data, relatively faithful to authors' functions (split documents into 5 sentences and tokenize each + tokenize entire document)
+- `class-DataGenerator.py` - tokenizing and modeling data in batches to reduce RAM usage and save the embeddings as .npz files
+- `colbertmodel.py` - replicate the ColBERT model
+- `models.ipynb` - run models with different combinations of inputs (whole documents, specific sentences, etc)
+- `replicate_colbert.ipynb` - data cleaning and try running our first model
 
 ### Data files:
 - `dataset.csv` - 200k documents, evenly split between documents classified as humorous and nonhumorous
 - `clean_dataset.csv` - same dataset as above, after processing: expand contractions, pad punctuation with spaces, and handle special characters
-
-### Files for tokenizing:
-- `bert-embeddings.py` - everything we need to tokenize the data, relatively faithful to authors' functions (split documents into 5 sentences and tokenize each + tokenize entire document) and save the embeddings as npz files
-- `bertembeddings-full.py` - functions to tokenize the documents split into 5 sentences but not tokenizing the entire document
-- `bertembeddings-simple.py` - tokenize the whole document but not individual MAX_SENTENCES
-
-### Models:
-- `colbertmodel.py` - model faithful to authors' proposed model (3 parallel layers/sentence * 5 sentences + 3 parallel layers/document = 18 layers)
-- `replicate_colbert.ipynb` - pmuch Meer's notebook, Jenna shouldn't edit unless she wants to fix merge conflicts as a punishment
-- `models.ipynb` - have all different models in same place
-
-### Analysis data files:
-- `3-models-summary.txt` - model summaries of `baseline`, `bert_2sent`, and `colbert_full`
-- `base-vs-colbert-full-metrics.csv` - model, runtime (s), loss, accuracy, val_loss, and val_accuracy for `baseline`, `bert_2sent`, and `colbert_full` for each epoch
-
-### Misc code:
-- `class-DataGenerator.py` - tokenizing and modeling data in batches to reduce RAM usage
+- `*.npz` our training, validation, and test sets of tokenized data, ready to be loaded into a BERT model
