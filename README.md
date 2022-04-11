@@ -4,45 +4,45 @@ A natural language processing project using BERT to detect humor, testing the ef
 ## Repository structure
 Professors will want to check out `models.ipynb` in the Code folder
 
-.
-├── README.md
-├── .gitignore
-├── .DS_Store
-├── Final Report.pdf
-├── Analysis
-    ├── Graphs
-        ├── f1-diff-comparison.png
-        ├── runtime-vs-f1.png
-        ├── training-accuracy.png
-        ├── training-loss.png
-        ├── validation-accuracy.png
-        ├── validation-loss.png
-    ├── Qualitative
-        ├── baseline_misclassified.csv
-        ├── colbert_10k_misclassified.csv
-        ├── colbert_simple_misclassified.csv
-        ├── confusion-matrices.md
-    ├── Quantitative
-        ├── model-results-prettynames.csv
-        ├── model-results.csv
-        ├── train-val-accuracy-loss-all.txt
-        ├── train-val-accuracy-loss-subset-numnames.txt
-        ├── train-val-accuracy-loss-subset.txt
-    ├── .DS_Store
-    ├── 3-models-summary.txt
-    ├── all-models-summary-cheatsheet.png
-├── Code
-    ├── bertembeddings.py
-    ├── class-DataGenerator.py
-    ├── colbertmodel.py
-    ├── models.ipynb
-    ├── replicate_colbert.ipynb
-├── Data
-    ├── clean_dataset.csv
-    ├── dataset.csv
-    ├── test_inputs_1k.npz
-    ├── train_inputs_10k.npz
-    ├── val_inputs_3k.npz
+. \
+├── README.md \
+├── .gitignore \
+├── .DS_Store \
+├── Final Report.pdf \
+├── Analysis \
+    ├── Graphs \
+        ├── f1-diff-comparison.png \
+        ├── runtime-vs-f1.png \
+        ├── training-accuracy.png \
+        ├── training-loss.png \
+        ├── validation-accuracy.png \
+        ├── validation-loss.png \
+    ├── Qualitative \
+        ├── baseline_misclassified.csv \
+        ├── colbert_10k_misclassified.csv \
+        ├── colbert_simple_misclassified.csv \
+        ├── confusion-matrices.md \
+    ├── Quantitative \
+        ├── model-results-prettynames.csv \
+        ├── model-results.csv \
+        ├── train-val-accuracy-loss-all.txt \
+        ├── train-val-accuracy-loss-subset-numnames.txt \
+        ├── train-val-accuracy-loss-subset.txt \
+    ├── .DS_Store \
+    ├── 3-models-summary.txt \
+    ├── all-models-summary-cheatsheet.png \
+├── Code \
+    ├── bertembeddings.py \
+    ├── class-DataGenerator.py \
+    ├── colbertmodel.py \
+    ├── models.ipynb \
+    ├── replicate_colbert.ipynb \
+├── Data \
+    ├── clean_dataset.csv \
+    ├── dataset.csv \
+    ├── test_inputs_1k.npz \
+    ├── train_inputs_10k.npz \
+    ├── val_inputs_3k.npz \
 
 ## About our files
 
